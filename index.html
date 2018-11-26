@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='styles.css' />
+        <title>CSS Positioning and Layout</title>
+    </head>
+    <body>
+        <nav>FIXED MENU <pre>{ position: fixed; top: 0; }</pre></nav>
+        <div id='main'>
+            <header>
+                <div class='headertitle'>
+                    <h1>CSS Content Positioning and Layouts</h1>
+                    <p>How elements are positioned relative to
+                    themselves</p>
+                </div>
+            </header>
+            <div class='container'>
+                <h2>Positioning</h2>
+                <ul>
+                    <li><b>Static or auto:</b> Respects the normal flow
+                    of content</li>
+                    <li><b>Relative:</b> Lets us move something around
+                    without effecting other elements</li>
+                    <li><b>Absolute:</b> Lets us position something
+                    around its parent element</li>
+                    <li><b>Fixed:</b> Lets us position something around
+                    the viewport</li>
+                </ul>
+                <p><b>Relative, absolute and fixed</b> positioning unlocks
+                the <b>z-index</b> controller which allows us to control the stacking context by
+                overlapping and underlapping elements.</p>
+            </div>
+            <div class='container'>
+                <h2>Static or auto</h2>
+                <pre>
+    position: static;
+    position: auto;
+                </pre>
+                <p>Respects the normal flow of content</p>
+                <p>Content follows the normal
+                document flow. Kind of like we would expect in a
+                word document.</p>
+                <div id='static'>
+                    <div class='div1'>Normal div</div>
+                    <div class='div2'>Another normal with a <span>span</span></div>
+                </div>
+            </div>
+            <div class='container'>
+                <h2>Relative</h2>
+                <pre>
+    position: relative;
+    top: 20px;
+                </pre>
+                <p>Lets us move something around without effecting
+                other elements</p>
+                <p>Relatives are relative to their own
+                positioning.
+                They stay were they were before they
+                became relative. But now the relative
+                items can move around - top bottom left
+                right -  without it affecting the
+                parent or the siblings.</p>
+                <p>Unlocks z-index</p>
+                <div class='relative'>
+                    <div class='relitem1'>Relative element</div>
+                    <div class='relitem2'>Relative element</div>
+                    <div class='relitem3'>Relative element</div>
+                </div>
+            </div>
+            <div class='container'>
+                <h2>Absolute</h2>
+                <pre>
+    #absolute-parent {
+        position: relative
+    }
+
+    .absolute-child {
+        position: absolute;
+        top: 10px;
+        left: 500px;
+    }
+                </pre>
+                <p>Lets us position something around its parent
+                element</p>
+                <p>Out of flow - takes its positioning from the
+                next parent that has its position set to anything
+                other than auto</p>
+                <p>Unlocks z-index</p>
+                <p>The yellow footer has a position of absolute and bottom set to 0.</p>
+                <div id='absolute-parent'>
+                    <div class='absolute-child'>Absolute element</div>
+                    <div>Regular element</div>
+                    <div>Regular element</div>
+                </div>
+            </div>
+            <div class='container'>
+                <h2>Fixed</h2>
+                <pre>
+    nav {
+        position: fixed;
+        top: 0;
+    }
+                </pre>
+                <p>Lets us position something around the viewport</p>
+                <p>Unlocks z-index</p>
+                <p>The green sticky menu is always at the top of the
+                viewport, because its position is set to fixed and
+                top is set to 0.
+            </div>
+            <div class='container'>
+                <h2>Floated elements</h2>
+                <pre>
+    // children
+    float: left;
+    width: 27%;
+    margin: 1.5%;
+    padding: 1.5%;
+                </pre>
+                <p>Floating content removes the content from the
+                content flow and places it either top right or left
+                of the parent div</p>
+                <p>To make sure that below content does not collapse we need to use clear: both (or left / right)</p>
+                <div id='floats'>
+                    <div class='floatitem'>Floated element</div>
+                    <div class='floatitem'>Floated element</div>
+                    <div class='floatitem'>Floated element</div>
+                </div>
+            </div>
+            <div class='container'>
+                <h2>Flex Layout</h2>
+                <pre>
+    // container
+    #flex {
+        display: flex;
+        height: 200px;
+        justify-content: space-around;
+        align-items: stretch;
+        background-color: pink;
+    }
+
+    // children
+    .flexitem {
+        flex: 1;
+        margin: 0 20px;
+    }
+
+    // 5 Flex item big
+    .big {
+        flex: 3;
+    }
+                </pre>
+                <div id='flex'>
+                    <div class='flexitem'>Flex element<pre>flex: 1;</pre></div>
+                    <div class='flexitem'>Flex element<pre>flex: 1;</pre></div>
+                    <div class='flexitem'>Flex element<pre>flex: 1;</pre></div>
+                    <div class='flexitem'>Flex element<pre>flex: 1;</pre></div>
+                    <div class='flexitem big'>Flex element big<pre>flex: 3;</pre></div>
+                </div>
+            </div>
+            <div class='container'>
+                <h2>Overflow</h2>
+                <p>Overflow hidden will cut out any content outside the elements boundries</p>
+                <p>Overflow scrolls adds a scrollbar</p>
+                <p>Overflow auto adds a scrollbar if it is necessary</p>
+                <div id='overflow'>
+                    <div class='overflow hidden'>
+                        <h3>Hidden</h3>
+                        <pre>
+
+    div {
+        overflow: hidden;
+    }
+                    </div>
+                    <div class='overflow scroll'>
+                        <h3>Scroll</h3>
+                        <pre>
+
+    div {
+        overflow: scroll;
+    }
+                        </pre>
+                    </div>
+                    <div class='overflow auto'>
+                        <h3>Auto</h3>
+                        <pre>
+
+    div {
+        overflow: auto;
+    }
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class='footer'>
+                FOOTER
+                <pre> footer { position: absolute; bottom: 0; } </pre>
+            </div>
+        </footer>
+    </body>
+</html>

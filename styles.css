@@ -1,0 +1,230 @@
+html, body {
+  padding: 0; margin: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height: 30px;
+  width: 100%;
+  background-color: green;
+  text-align: center;
+  color: white;
+  font-family: Arial;
+  padding: 5px;
+}
+
+nav pre {
+  background-color: lightgrey;
+  color: black;
+  padding: 3px;
+  margin: 3px;
+  display: inline-block;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  background-color: yellow;
+  width: 100%;
+  font-family: Arial;
+  padding: 30px 0;
+  display: flex;
+}
+
+.footer {
+  margin: auto;
+  text-align: center;
+}
+
+.footer pre {
+  background-color: lightgrey;
+  display: inline-block;
+  margin: 3px;
+  padding: 10px;
+  text-align: left;
+
+}
+
+#main {
+  position: relative;
+  background-color: white;
+  top: 30px;
+}
+
+h2 {
+  padding: 20px;
+  text-decoration: underline;
+}
+
+header {
+  background-color: orange;
+  height: 170px;
+  z-index: 14;
+  display: flex;
+}
+
+.headertitle {
+  margin: auto;
+  text-transform: uppercase;
+  color: blue;
+  font-family: Arial;
+  text-align: center;
+}
+
+.headertitle p {
+  background-color: yellow;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.container {
+  background-color: white;
+}
+
+.container p {
+  background-color: rgba(255,255,255,0.4);
+  width: 40%;
+  padding: 0 20px;
+}
+
+.container ul {
+  margin-top: 20px;
+}
+
+#static {
+  background-color: pink;
+  margin: 10px;
+  padding: 10px;
+  height: 100px;
+}
+
+.div1 {
+  background-color: lightgreen;
+  margin-top: 20px;
+}
+
+.div2 span {
+  color: red;
+  font-weight: bold;
+}
+
+.div2 {
+  background-color: lightyellow;
+}
+
+#floats {
+  height: 130px;
+  background-color: grey;
+}
+
+.floatitem {
+  float: left;
+  width: 27%;
+  background-color: pink;
+  margin: 1.5%;
+  padding: 1.5%;
+  text-align: center;
+
+}
+
+#flex {
+  display: flex;
+  height: 200px;
+  justify-content: space-around;
+  align-items: stretch;
+  background-color: pink;
+}
+
+.flexitem {
+  flex: 1;
+  background-color: cyan;
+  text-align: center;
+  padding-top: 40px;
+  margin: 0 20px;
+}
+
+.big {
+  flex: 3;
+}
+
+.relative {
+  padding: 20px;
+  background-color: lightgrey;
+}
+
+.relitem1, .relitem2, .relitem3 {
+  width: 200px;
+  opacity: 0.5;
+  background-color: yellow;
+  padding: 10px;
+}
+
+.relitem1 {
+  position: relative;
+  top: 20px;
+}
+
+.relitem2 {
+  position: relative;
+  left: 30px;
+  top: 5px;
+}
+
+.relitem3 {
+  position: relative;
+  left: 60px;
+  top: -8px;
+}
+
+#absolute-parent {
+  position: relative;
+  background-color: grey;
+  height: 200px;
+  padding: 20px;
+}
+
+.absolute-child {
+  position: absolute;
+  font-size: 4em;
+  padding: 30px;
+  top: 10px;
+  left: 100px;
+  background-color: rgba(255,255,255,0.2);
+}
+
+#absolute p {
+  font-size: 20px;
+  width: 40%;
+}
+
+#overflow {
+  display: flex;
+  height: 300px;
+}
+
+.overflow {
+  flex: 1;
+  background-color: lightblue;
+  padding: 10px 40px;
+  height: 140px;
+}
+
+.overflow pre {
+    background-color: antiquewhite;
+}
+
+.scroll {
+    overflow: scroll;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.auto {
+  overflow: auto;
+}
