@@ -60,13 +60,31 @@
                 parent or the siblings.</p>
                 <p>Unlocks z-index</p>
                 <pre>
-    position: relative;
-    top: 20px;
+    .relative-element-1, .relative-element-2, .relative-element-3 {
+        position: relative;
+        opacity: 0.5;
+        background-color: yellow;
+        padding: 10px;
+    }
+
+    .relative-element-1 {
+        top: 20px;
+    }
+
+    .relative-element-2 {
+        left: 30px;
+        top: 5px;
+    }
+
+    .relative-element-3 {
+        left: 60px;
+        top: -8px;
+    }
                 </pre>
                 <div class='relative'>
-                    <div class='relitem1'>Relative element</div>
-                    <div class='relitem2'>Relative element</div>
-                    <div class='relitem3'>Relative element</div>
+                    <div class='relative-element-1'>Relative element</div>
+                    <div class='relative-element-2'>Relative element</div>
+                    <div class='relative-element-3'>Relative element</div>
                 </div>
             </div>
             <div class='container'>
@@ -83,14 +101,14 @@
         position: relative
     }
 
-    .absolute-child {
+    .absolute-element {
         position: absolute;
         top: 10px;
         left: 500px;
     }
                 </pre>
                 <div id='absolute-parent'>
-                    <div class='absolute-child'>Absolute element</div>
+                    <div class='absolute-element'>Absolute element</div>
                     <div>Regular element</div>
                     <div>Regular element</div>
                 </div>
@@ -134,22 +152,22 @@
     }
 
     // children
-    .flexitem {
+    .flex-element {
         flex: 1;
         margin: 0 20px;
     }
 
-    // 5 Flex item big
+    //  Flex element big
     .big {
         flex: 3;
     }
                 </pre>
                 <div id='flex'>
-                    <div class='flexitem'>Flex element<pre>flex: 1;</pre></div>
-                    <div class='flexitem'>Flex element<pre>flex: 1;</pre></div>
-                    <div class='flexitem'>Flex element<pre>flex: 1;</pre></div>
-                    <div class='flexitem'>Flex element<pre>flex: 1;</pre></div>
-                    <div class='flexitem big'>Flex element big<pre>flex: 3;</pre></div>
+                    <div class='flex-element'>Flex element<pre>flex: 1;</pre></div>
+                    <div class='flex-element'>Flex element<pre>flex: 1;</pre></div>
+                    <div class='flex-element'>Flex element<pre>flex: 1;</pre></div>
+                    <div class='flex-element'>Flex element<pre>flex: 1;</pre></div>
+                    <div class='flex-element big'>Flex element big<pre>flex: 3;</pre></div>
                 </div>
             </div>
             <div class='container'>
@@ -204,8 +222,6 @@
         background-color: blue;
         grid-column-end: span 3;
     }
-
-
                     </pre>
                     <div id='grid-parent-2'>
                         <div>Grid div first</div>
@@ -224,16 +240,17 @@
                 of the parent div</p>
                 <p>To make sure that below content does not collapse we need to use clear: both (or left / right)</p>
                 <pre>
-    // children
-    float: left;
-    width: 27%;
-    margin: 1.5%;
-    padding: 1.5%;
+    .floated-element {
+        float: left;
+        width: 27%;
+        margin: 1.5%;
+        padding: 1.5%;
+    }
                 </pre>
                 <div id='floats'>
-                    <div class='floatitem'>Floated element</div>
-                    <div class='floatitem'>Floated element</div>
-                    <div class='floatitem'>Floated element</div>
+                    <div class='floated-element'>Floated element</div>
+                    <div class='floated-element'>Floated element</div>
+                    <div class='floated-element'>Floated element</div>
                 </div>
             </div>
             <div class='container'>

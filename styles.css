@@ -111,26 +111,24 @@ h2 {
   background-color: lightgrey;
 }
 
-.relitem1, .relitem2, .relitem3 {
+.relative-element-1, .relative-element-2, .relative-element-3 {
+  position: relative;
   width: 200px;
   opacity: 0.5;
   background-color: yellow;
   padding: 10px;
 }
 
-.relitem1 {
-  position: relative;
+.relative-element-1 {
   top: 20px;
 }
 
-.relitem2 {
-  position: relative;
+.relative-element-2 {
   left: 30px;
   top: 5px;
 }
 
-.relitem3 {
-  position: relative;
+.relative-element-3 {
   left: 60px;
   top: -8px;
 }
@@ -144,7 +142,7 @@ h2 {
   padding: 20px;
 }
 
-.absolute-child {
+.absolute-element {
   position: absolute;
   font-size: 4em;
   padding: 30px;
@@ -195,7 +193,7 @@ nav pre {
   background-color: pink;
 }
 
-.flexitem {
+.flex-element {
   flex: 1;
   background-color: cyan;
   text-align: center;
@@ -203,7 +201,7 @@ nav pre {
   margin: 0 20px;
 }
 
-.flexitem pre {
+.flex-element pre {
     background-color: transparent;
 }
 
@@ -214,7 +212,7 @@ nav pre {
 /* Grid Layout */
 
 #grid {
-    height: 1350px;
+    height: 1300px;
 }
 
 #grid-parent {
@@ -265,7 +263,7 @@ nav pre {
   background-color: grey;
 }
 
-.floatitem {
+.floated-element {
   float: left;
   width: 27%;
   background-color: pink;
