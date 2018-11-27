@@ -203,6 +203,10 @@ nav pre {
   margin: 0 20px;
 }
 
+.flexitem pre {
+    background-color: transparent;
+}
+
 .big {
   flex: 3;
 }
