@@ -204,7 +204,7 @@ header {
 
 #overflow {
   display: flex;
-  height: 300px;
+  height: 200px;
 }
 
 .overflow {
@@ -228,4 +228,17 @@ header {
 
 .auto {
   overflow: auto;
+}
+
+#grid-parent {
+  display: grid;
+  height: 200px;
+  grid-template-columns: 20% 20% auto;
+  /*grid-template-columns: repeat(3, auto);*/
+  /*grid-template-columns: fit-content(40%), auto;*/
+}
+
+#grid-parent div {
+  margin: 10px;
+  background-color: lightgreen;
 }
