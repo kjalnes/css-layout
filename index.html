@@ -6,14 +6,14 @@
         <title>CSS Positioning and Layout Modules</title>
     </head>
     <body>
-        <nav>FIXED MENU <pre>{ position: fixed; top: 0; }</pre></nav>
+        <nav><div>FIXED MENU</div><pre>{ position: fixed; top: 0; }</pre></nav>
         <div id='main'>
             <header>
                 <div class='headertitle'>
                     <h1>CSS Content Positioning and Layout Modules</h1>
                     <p>Positioning: How elements are positioned relative to
                     themselves</p>
-                    <p>Layout Modules: How elements put into one and two dimensional systems.</p>
+                    <p>Layout Modules: How elements put into one and two dimensional systems</p>
                 </div>
             </header>
             <div class='container'>
@@ -110,6 +110,16 @@
                 </pre>
             </div>
             <div class='container'>
+                <h2>Modules and Properties</h2>
+                <ul>
+                    <li>Flexbox Display</li>
+                    <li>Grid Display</li>
+                    <li>Float Property</li>
+                    <li>Overflow Property</li>
+                </ul>
+                <p>There are many ways to align content using CSS. There is no one way that is superior to others, and often a good solution requires using a grid within a flex box layout within a grid.</p>
+            </div>
+            <div class='container'>
                 <h2>CSS Flex Layout Module</h2>
                 <p>CSS3 web layout model. Automatically rearranges depending on screensize. Good for one dimensional grids.</p>
                 <p>Allows us to  control how content is displayed (row/column).</p>
@@ -146,6 +156,7 @@
                 <h2>CSS Grid Layout Module</h2>
                 <p>Easy to create both rows and columns - two dimensional grids.</p>
                 <div id='grid'>
+                    <h3>Example One</h3>
                     <pre>
 
     #grid-parent {
@@ -166,6 +177,7 @@
                         <div>Menu</div>
                     </div>
 
+                    <h3>Example Two</h3>
                     <pre>
 
     #grid-parent-2 {
@@ -227,7 +239,7 @@
             <div class='container'>
                 <h2>Overflow Property</h2>
                 <p>Overflow hidden will cut out any content outside the elements boundries</p>
-                <p>Overflow scrolls adds a scrollbar</p>
+                <p>Overflow scroll adds a scrollbar</p>
                 <p>Overflow auto adds a scrollbar if it is necessary</p>
                 <div id='overflow'>
                     <div class='overflow hidden'>

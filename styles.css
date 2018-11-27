@@ -2,49 +2,14 @@ html, body {
   padding: 0; margin: 0;
 }
 
-pre {
-  background-color: aliceblue;
-  padding: 10px;
-}
-
-footer {
-  position: relative;
-  bottom: 0;
-  background-color: yellow;
-  width: 100%;
-  font-family: Arial;
-  padding: 30px 0;
-  display: flex;
-}
-
-.footer {
-  margin: auto;
-  text-align: center;
-}
-
-.footer pre {
-  background-color: lightgrey;
-  display: inline-block;
-  margin: 3px;
-  padding: 10px;
-  text-align: left;
-
-}
-
 #main {
   position: relative;
   background-color: white;
-  top: 30px;
-}
-
-h2 {
-  padding: 20px;
-  text-decoration: underline;
+  top: 70px;
 }
 
 header {
   background-color: orange;
-  /*height: 170px;*/
   height: 20%;
   z-index: 14;
   display: flex;
@@ -66,14 +31,50 @@ header {
   letter-spacing: 2px;
 }
 
+pre {
+  background-color: aliceblue;
+  padding: 10px;
+}
+
+
+footer {
+  position: relative;
+  bottom: 0;
+  background-color: yellow;
+  width: 100%;
+  font-family: Arial;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer {
+  flex: 1;
+  text-align: center;
+}
+
+.footer pre {
+  background-color: lightgrey;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+
+}
+
+
+h2 {
+  text-decoration: underline;
+}
+
+
 .container {
-  background-color: white;
+  padding: 0 4% 4% 4%;
 }
 
 .container p {
   background-color: rgba(255,255,255,0.4);
-  width: 90%;
-  padding: 0 20px;
 }
 
 .container ul {
@@ -163,7 +164,7 @@ nav {
   position: fixed;
   top: 0;
   z-index: 10;
-  height: 30px;
+  height: 70px;
   width: 100%;
   background-color: green;
   text-align: center;
@@ -172,33 +173,19 @@ nav {
   padding: 5px;
 }
 
+nav div {
+  display: block;
+}
+
 nav pre {
   background-color: lightgrey;
   color: black;
-  padding: 3px;
+  padding: 3px 15px;
   margin: 3px;
   display: inline-block;
 }
 
-/* Floated Elements */
-
-
-#floats {
-  height: 130px;
-  background-color: grey;
-}
-
-.floatitem {
-  float: left;
-  width: 27%;
-  background-color: pink;
-  margin: 1.5%;
-  padding: 1.5%;
-  text-align: center;
-}
-
 /* Flex Layout */
-
 
 #flex {
   display: flex;
@@ -220,16 +207,15 @@ nav pre {
   flex: 3;
 }
 
-
 /* Grid Layout */
 
 #grid {
-    height: 1270px;
+    height: 1350px;
 }
 
 #grid-parent {
   display: grid;
-  height: 80px;
+  height: 50px;
   grid-template-columns: 10% 80% auto;
   grid-column-gap: 10px;
   /*grid-template-columns: repeat(3, auto);*/
@@ -242,7 +228,6 @@ nav pre {
   padding: 8px
 }
 
-
 #grid-parent-2 {
   display: grid;
   height: 200px;
@@ -250,7 +235,6 @@ nav pre {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
-
 
 #grid-parent-2 div {
   background-color: lightpink;
@@ -268,6 +252,22 @@ nav pre {
 #grid-parent-2 div:nth-child(5), #grid-parent-2 div:nth-child(6) {
   background-color: cornflowerblue;
   grid-column-end: span 3;
+}
+
+/* Floated Elements */
+
+#floats {
+  height: 130px;
+  background-color: grey;
+}
+
+.floatitem {
+  float: left;
+  width: 27%;
+  background-color: pink;
+  margin: 1.5%;
+  padding: 1.5%;
+  text-align: center;
 }
 
 /* Overflow Content*/
