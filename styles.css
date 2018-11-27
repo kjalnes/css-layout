@@ -10,7 +10,6 @@ html, body {
 
 header {
   background-color: orange;
-  height: 20%;
   z-index: 14;
   display: flex;
 }
@@ -29,6 +28,11 @@ header {
   color: black;
   font-weight: bold;
   letter-spacing: 2px;
+}
+
+.headertitle a {
+  display: inline-block;
+  padding-bottom: 10px;
 }
 
 pre {
