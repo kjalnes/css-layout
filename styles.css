@@ -2,25 +2,9 @@ html, body {
   padding: 0; margin: 0;
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  height: 30px;
-  width: 100%;
-  background-color: green;
-  text-align: center;
-  color: white;
-  font-family: Arial;
-  padding: 5px;
-}
-
-nav pre {
-  background-color: lightgrey;
-  color: black;
-  padding: 3px;
-  margin: 3px;
-  display: inline-block;
+pre {
+  background-color: aliceblue;
+  padding: 10px;
 }
 
 footer {
@@ -96,6 +80,8 @@ header {
   margin-top: 20px;
 }
 
+/* Static / Auto positioning */
+
 #static {
   background-color: pink;
   margin: 10px;
@@ -103,54 +89,21 @@ header {
   height: 100px;
 }
 
-.div1 {
+#static div:first-child {
   background-color: lightgreen;
   margin-top: 20px;
 }
 
-.div2 span {
+#static div:nth-child(2) {
+  background-color: lightyellow;
+}
+
+#static div:nth-child(2) span {
   color: red;
   font-weight: bold;
 }
 
-.div2 {
-  background-color: lightyellow;
-}
-
-#floats {
-  height: 130px;
-  background-color: grey;
-}
-
-.floatitem {
-  float: left;
-  width: 27%;
-  background-color: pink;
-  margin: 1.5%;
-  padding: 1.5%;
-  text-align: center;
-
-}
-
-#flex {
-  display: flex;
-  height: 200px;
-  justify-content: space-around;
-  align-items: stretch;
-  background-color: pink;
-}
-
-.flexitem {
-  flex: 1;
-  background-color: cyan;
-  text-align: center;
-  padding-top: 40px;
-  margin: 0 20px;
-}
-
-.big {
-  flex: 3;
-}
+/* Relative positioning */
 
 .relative {
   padding: 20px;
@@ -181,9 +134,11 @@ header {
   top: -8px;
 }
 
+/* Absolute Positioning */
+
 #absolute-parent {
   position: relative;
-  background-color: grey;
+  background-color: bisque;
   height: 200px;
   padding: 20px;
 }
@@ -202,9 +157,124 @@ header {
   width: 40%;
 }
 
-#overflow {
+/* Fixed Positioning */
+
+nav {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height: 30px;
+  width: 100%;
+  background-color: green;
+  text-align: center;
+  color: white;
+  font-family: Arial;
+  padding: 5px;
+}
+
+nav pre {
+  background-color: lightgrey;
+  color: black;
+  padding: 3px;
+  margin: 3px;
+  display: inline-block;
+}
+
+/* Floated Elements */
+
+
+#floats {
+  height: 130px;
+  background-color: grey;
+}
+
+.floatitem {
+  float: left;
+  width: 27%;
+  background-color: pink;
+  margin: 1.5%;
+  padding: 1.5%;
+  text-align: center;
+}
+
+/* Flex Layout */
+
+
+#flex {
   display: flex;
   height: 200px;
+  justify-content: space-around;
+  align-items: stretch;
+  background-color: pink;
+}
+
+.flexitem {
+  flex: 1;
+  background-color: cyan;
+  text-align: center;
+  padding-top: 40px;
+  margin: 0 20px;
+}
+
+.big {
+  flex: 3;
+}
+
+
+/* Grid Layout */
+
+#grid {
+    height: 1270px;
+}
+
+#grid-parent {
+  display: grid;
+  height: 80px;
+  grid-template-columns: 10% 80% auto;
+  grid-column-gap: 10px;
+  /*grid-template-columns: repeat(3, auto);*/
+  /*grid-template-columns: fit-content(40%), auto;*/
+}
+
+#grid-parent div {
+  background-color: lightgreen;
+  text-align: center;
+  padding: 8px
+}
+
+
+#grid-parent-2 {
+  display: grid;
+  height: 200px;
+  grid-template-columns: 10% 20% auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+
+#grid-parent-2 div {
+  background-color: lightpink;
+  padding: 8px;
+}
+
+#grid-parent-2 div:first-child {
+  background-color: red;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+  grid-row-start: 1;
+  grid-row-end: span 3;
+}
+
+#grid-parent-2 div:nth-child(5), #grid-parent-2 div:nth-child(6) {
+  background-color: cornflowerblue;
+  grid-column-end: span 3;
+}
+
+/* Overflow Content*/
+
+#overflow {
+  display: flex;
+  height: 250px;
 }
 
 .overflow {
@@ -212,6 +282,10 @@ header {
   background-color: lightblue;
   padding: 10px 40px;
   height: 140px;
+}
+
+.overflow h3 {
+  text-align: center;
 }
 
 .overflow pre {
@@ -230,15 +304,4 @@ header {
   overflow: auto;
 }
 
-#grid-parent {
-  display: grid;
-  height: 200px;
-  grid-template-columns: 20% 20% auto;
-  /*grid-template-columns: repeat(3, auto);*/
-  /*grid-template-columns: fit-content(40%), auto;*/
-}
 
-#grid-parent div {
-  margin: 10px;
-  background-color: lightgreen;
-}

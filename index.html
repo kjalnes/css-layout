@@ -3,16 +3,17 @@
     <head>
         <link rel='stylesheet' href='styles.css' />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CSS Positioning and Layout</title>
+        <title>CSS Positioning and Layout Modules</title>
     </head>
     <body>
         <nav>FIXED MENU <pre>{ position: fixed; top: 0; }</pre></nav>
         <div id='main'>
             <header>
                 <div class='headertitle'>
-                    <h1>CSS Content Positioning and Layouts</h1>
-                    <p>How elements are positioned relative to
+                    <h1>CSS Content Positioning and Layout Modules</h1>
+                    <p>Positioning: How elements are positioned relative to
                     themselves</p>
+                    <p>Layout Modules: How elements put into one and two dimensional systems.</p>
                 </div>
             </header>
             <div class='container'>
@@ -33,25 +34,21 @@
             </div>
             <div class='container'>
                 <h2>Static or auto</h2>
-                <pre>
-    position: static;
-    position: auto;
-                </pre>
                 <p>Respects the normal flow of content</p>
                 <p>Content follows the normal
                 document flow. Kind of like we would expect in a
                 word document.</p>
+                <pre>
+    position: static;
+    position: auto;
+                </pre>
                 <div id='static'>
-                    <div class='div1'>Normal div</div>
-                    <div class='div2'>Another normal with a <span>span</span></div>
+                    <div>Normal div</div>
+                    <div>Another normal with a <span>span</span></div>
                 </div>
             </div>
             <div class='container'>
                 <h2>Relative</h2>
-                <pre>
-    position: relative;
-    top: 20px;
-                </pre>
                 <p>Lets us move something around without effecting
                 other elements</p>
                 <p>Relatives are relative to their own
@@ -62,6 +59,10 @@
                 right -  without it affecting the
                 parent or the siblings.</p>
                 <p>Unlocks z-index</p>
+                <pre>
+    position: relative;
+    top: 20px;
+                </pre>
                 <div class='relative'>
                     <div class='relitem1'>Relative element</div>
                     <div class='relitem2'>Relative element</div>
@@ -70,6 +71,13 @@
             </div>
             <div class='container'>
                 <h2>Absolute</h2>
+                <p>Lets us position something around its parent
+                element</p>
+                <p>Out of flow - takes its positioning from the
+                next parent that has its position set to anything
+                other than auto</p>
+                <p>Unlocks z-index</p>
+                <p>The yellow footer has a position of absolute and bottom set to 0.</p>
                 <pre>
     #absolute-parent {
         position: relative
@@ -81,13 +89,6 @@
         left: 500px;
     }
                 </pre>
-                <p>Lets us position something around its parent
-                element</p>
-                <p>Out of flow - takes its positioning from the
-                next parent that has its position set to anything
-                other than auto</p>
-                <p>Unlocks z-index</p>
-                <p>The yellow footer has a position of absolute and bottom set to 0.</p>
                 <div id='absolute-parent'>
                     <div class='absolute-child'>Absolute element</div>
                     <div>Regular element</div>
@@ -96,39 +97,22 @@
             </div>
             <div class='container'>
                 <h2>Fixed</h2>
+                <p>Lets us position something around the viewport</p>
+                <p>Unlocks z-index</p>
+                <p>The green sticky menu is always at the top of the
+                viewport, because its position is set to fixed and
+                top is set to 0.</p>
                 <pre>
     nav {
         position: fixed;
         top: 0;
     }
                 </pre>
-                <p>Lets us position something around the viewport</p>
-                <p>Unlocks z-index</p>
-                <p>The green sticky menu is always at the top of the
-                viewport, because its position is set to fixed and
-                top is set to 0.
             </div>
             <div class='container'>
-                <h2>Floated elements</h2>
-                <pre>
-    // children
-    float: left;
-    width: 27%;
-    margin: 1.5%;
-    padding: 1.5%;
-                </pre>
-                <p>Floating content removes the content from the
-                content flow and places it either top right or left
-                of the parent div</p>
-                <p>To make sure that below content does not collapse we need to use clear: both (or left / right)</p>
-                <div id='floats'>
-                    <div class='floatitem'>Floated element</div>
-                    <div class='floatitem'>Floated element</div>
-                    <div class='floatitem'>Floated element</div>
-                </div>
-            </div>
-            <div class='container'>
-                <h2>Flex Layout</h2>
+                <h2>CSS Flex Layout Module</h2>
+                <p>CSS3 web layout model. Automatically rearranges depending on screensize. Good for one dimensional grids.</p>
+                <p>Allows us to  control how content is displayed (row/column).</p>
                 <pre>
     // container
     #flex {
@@ -159,7 +143,89 @@
                 </div>
             </div>
             <div class='container'>
-                <h2>Overflow</h2>
+                <h2>CSS Grid Layout Module</h2>
+                <p>Easy to create both rows and columns - two dimensional grids.</p>
+                <div id='grid'>
+                    <pre>
+
+    #grid-parent {
+        display: grid;
+        height: 200px;
+        grid-template-columns: 20% 20% auto;
+        grid-column-gap: 10px;
+    }
+
+    #grid-parent div {
+        background-color: lightgreen;
+    }
+
+                </pre>
+                    <div id='grid-parent'>
+                        <div>Logo</div>
+                        <div>Company name</div>
+                        <div>Menu</div>
+                    </div>
+
+                    <pre>
+
+    #grid-parent-2 {
+        display: grid;
+        height: 200px;
+        grid-template-columns: 10% 20% auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    #grid-parent-2 div {
+        background-color: lightpink;
+    }
+
+    #grid-parent-2 div:first-child {
+        background-color: red;
+        grid-column-start: 2;
+        grid-column-end: span 2;
+        grid-row-start: 1;
+        grid-row-end: span 3;
+    }
+
+    #grid-parent-2 div:nth-child(5), #grid-parent-2 div:nth-child(6) {
+        background-color: blue;
+        grid-column-end: span 3;
+    }
+
+
+                    </pre>
+                    <div id='grid-parent-2'>
+                        <div>Grid div first</div>
+                        <div>Grid div</div>
+                        <div>Grid div</div>
+                        <div>Grid div</div>
+                        <div>Grid div nth-child(5)</div>
+                        <div>Grid div nth-child(6)</div>
+                    </div>
+                </div>
+            </div>
+            <div class='container'>
+                <h2>Float Property</h2>
+                <p>Floating content removes the content from the
+                content flow and places it either top right or left
+                of the parent div</p>
+                <p>To make sure that below content does not collapse we need to use clear: both (or left / right)</p>
+                <pre>
+    // children
+    float: left;
+    width: 27%;
+    margin: 1.5%;
+    padding: 1.5%;
+                </pre>
+                <div id='floats'>
+                    <div class='floatitem'>Floated element</div>
+                    <div class='floatitem'>Floated element</div>
+                    <div class='floatitem'>Floated element</div>
+                </div>
+            </div>
+            <div class='container'>
+                <h2>Overflow Property</h2>
                 <p>Overflow hidden will cut out any content outside the elements boundries</p>
                 <p>Overflow scrolls adds a scrollbar</p>
                 <p>Overflow auto adds a scrollbar if it is necessary</p>
@@ -190,14 +256,6 @@
     }
                         </pre>
                     </div>
-                </div>
-            </div>
-            <div class='container'>
-                <h2>Grid</h2>
-                <div id='grid-parent'>
-                    <div>Hello</div>
-                    <div>World</div>
-                    <div>!</div>
                 </div>
             </div>
         </div>
